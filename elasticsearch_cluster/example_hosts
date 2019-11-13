@@ -1,0 +1,8 @@
+[es:children]
+esm
+esd
+[esm]
+x.x.x.x ansible_ssh_user=ubuntu
+[esd]
+x.x.x.x ansible_ssh_user=ubuntu
+x.x.x.x ansible_ssh_user=ubuntu

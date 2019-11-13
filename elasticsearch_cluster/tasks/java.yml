@@ -1,0 +1,8 @@
+---
+- name: installing Java 8 in Ubuntu
+  shell: apt install -y openjdk-8-*
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: installing Java 8 in Centos
+  shell: yum install java-1.8.0-openjdk -y
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat
