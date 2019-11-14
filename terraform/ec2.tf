@@ -19,7 +19,7 @@ resource "aws_instance" "app" {
   ami                    = "${var.ami}"
   instance_type          = "t2.micro"
   key_name               = "${var.keyname}"
-  subnet_id              = "${aws_subnet.private-subnet.*.id[count.index]}"
+  subnet_id              = "${element(aws_subnet.private-subnet.*.id, count.index)}"
   vpc_security_group_ids = ["${aws_security_group.app.id}"]
   source_dest_check      = false
   user_data              = "${file("install.sh")}"
