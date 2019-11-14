@@ -1,4 +1,4 @@
-# osm_elasticSearch_Cluster
+# elasticsearch_Cluster
 This repo controls the Ansible Role for ElasticSearch cluster installation.
 
 # How to run (here assume you have host/inventory is ready based on Node-defination standard)
