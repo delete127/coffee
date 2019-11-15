@@ -54,13 +54,8 @@ resource "aws_nat_gateway" "nat" {
 
 # Assign the route table to the private Subnet
 resource "aws_route_table_association" "db-private-rt" {
+  count          = "${length(aws_subnet.private-subnet.*.id)}"
   subnet_id      = "${aws_subnet.private-subnet.*.id[0]}"
-  route_table_id = "${aws_route_table.db-private-rt.id}"
-}
-
-# Assign the route table to the private Subnet
-resource "aws_route_table_association" "db-private-rt-2" {
-  subnet_id      = "${aws_subnet.private-subnet.*.id[1]}"
   route_table_id = "${aws_route_table.db-private-rt.id}"
 }
 
